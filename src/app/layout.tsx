@@ -8,6 +8,8 @@ import { ThemeProvider } from "@/providers/theme.provider";
 
 import { cn } from "@/lib/utils";
 
+import { Toaster } from "@/components/ui/toaster";
+
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -23,7 +25,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <head />
       <body
         className={cn(
-          "min-h-screen bg-zinc-200 font-sans antialiased",
+          "min-h-screen  bg-white md:bg-zinc-200 font-sans antialiased",
           fontSans.variable
         )}
       >
@@ -34,6 +36,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           disableTransitionOnChange
         >
           <Providers>{children}</Providers>
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
